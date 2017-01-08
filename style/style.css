@@ -1,0 +1,594 @@
+/*============Style co ban cho web site============*/
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+html {
+	/*font-family: Helvetica, Arial;*/
+	font-family: FontAwesome, Arial;
+}
+body {
+	font-weight: 300;
+	color: #333;
+	line-height: 1.254; /*Chieu cao moi hang van ban*/
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: #66CCFF;
+	transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	font-size: 17px;
+}
+a:hover, a:visited { /*Khi chung ta lick chuot vao*/
+	color: #265778;
+
+}
+h2 {
+	margin-top: -5px;
+	overflow: hidden;
+	font-weight: bold !important;
+}
+input[type="button"]:hover {
+	background-color: #66FFCC;
+	border: 2px solid #66FFCC;
+}
+select {
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+}
+img .small-icon {
+	width: 20px;
+	height: 20px;
+}
+/*============Chia cot website============*/
+/*============Head============*/
+/*Thanh head trên đỉnh đầu*/
+#head {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 50px;
+	z-index: 20;
+	background-color: #191818;
+	animation-name: t2b;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;
+}
+/*Logo iot*/
+#head .name a{
+	margin-left: 17px;
+	color: #66CCFF;
+	font-weight: bold;
+	font-size: 17px;
+}
+/*Nút sử dụng để đăng xuất cũng như đổi mật khẩu*/
+#head .user-button {
+	/*background-image: url(../img/user.jpg);
+	background-size: 100%;*/
+	/*width: 30px;
+	height: 30px;*/
+	position: fixed;
+	top: -1px;
+	right: 96px;
+	background-color: transparent;
+	color: white;
+}
+/*============User popup============*/
+/*Tạo popup khi user nhấn vào button user*/
+#popup-user {
+	display: none;
+	position: fixed;
+	top: 47px;
+	right: 125px;
+	border-radius: 6px;
+    /*padding: 8px;*/
+    background: #88b7d5;
+	border: 1px solid #c2e1f5;
+	width: 150px;
+	height: auto;
+	animation-name: t2bhalf;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;
+	z-index: 20;
+}
+/*Tạo hình mũi tên, cũng như hiển thị của popup*/
+#popup-user:after, #popup-user:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+#popup-user:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #88b7d5;
+	border-width: 5px;
+	margin-left: 55px;
+}
+#popup-user:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #c2e1f5;
+	border-width: 6px;
+	margin-left: 54px;
+}
+/*============Popup element============*/
+/*Các tham số cho thẻ ul*/
+#popup-user ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+/*Các tham số cho từng mục li của ul*/
+#popup-user ul li{
+	line-height: 2em;
+	height: 2em;
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	position: relative;
+}
+/*Các tham số cho thẻ link a nằm trong popup*/
+#popup-user ul li a{
+	display: block;
+	color:#fff;
+	padding: 0 1em;
+	border-bottom: 1px solid #E4F0F9;
+	text-decoration: none;
+}
+/*Hiệu ứng khi đưa chuột qua popup*/
+#popup-user ul li:hover {
+	background-color: #33CCFF;
+}
+/*============Container============*/
+/*Container là khung chứa nội dung chính của website*/
+#container {
+	padding-left: 180px;
+	position: relative;
+	left: 0;
+	width: 100%;
+	top: 50px;
+}
+/*============Menu============*/
+/*CSS thanh menu trái*/
+#menu {
+	position: fixed;
+	height: 100%;
+	background-color: #191818;
+	width: 220px;
+	left: 0;
+	top: 50px;
+	z-index: 19;
+	animation-name: l2r;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;
+	/*font-size: 20px;*/
+}
+
+
+#menu ul {
+	list-style-type: none; /*Kieu ky tu dau tien cua list*/
+	padding: 0;
+	margin: 0;
+}
+#menu ul li {
+	line-height: 2.9em;
+	height: 2.9em;
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	position: relative;
+}
+#menu ul li a {
+	display: block;
+	color:#fff;
+	padding: 0 1em;  /*1 em la de cach ra tu vien ben trai*/
+	/*border-bottom: 1px solid #333;*/
+	border-top: 2px solid #333;
+}
+#menu ul li:last-child {
+	border-bottom: 2px solid #333;
+}
+#menu ul li:hover {
+	background-color: #454545;
+}
+#menu ul li .selected {
+	background-color: #454545;
+	cursor: default;
+}
+/*============Khung sensor chính bao gồm selector vs gadget============*/
+#ssinf {
+	border: 2px solid #DDDDDD;
+	border-radius: 2px;
+	height: auto;
+	width: 103%;
+}
+
+/*============CSS for content and php included============*/
+#content {
+	padding: 1em 3em; /*1 em tren dau, 8 em trai phai*/
+	/*animation-name: l2r;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;*/
+}
+/*Main-content là đoạn tiêu đề trên cùng của mỗi trang php nhỏ*/
+#main-content {
+	width: 1000px;
+	margin-top: -20px !important;
+}
+/*Css cho toàn bộ các trang php con được tải*/
+.php-included {
+	animation-name: l2r;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;
+}
+/*============CSS cho khung ngoài của trang php được tải============*/
+#importphp {
+	padding-left: 60px;
+	padding-top: 10px;
+}
+ /*============4 gadget của trang ssinfo============*/
+ .row {
+ 	overflow: hidden;
+ 	margin: 1em auto;
+ 	margin-left: 15px;
+ }
+ .row .col {
+ 	margin-top: 5px;
+ 	float: left;
+ 	width: 250px;
+ 	margin-right: 15px;
+ 	background-color: #e7e7e7;
+ 	height: 130px;
+ 	border: 1px solid #33FF00;
+ 	display: block;
+ 	border-radius: 4px;
+ 	color: #FFFFFF;
+ }
+ /*thành phần con cuối cùng*/
+.row .col:last-child {
+ 	margin-right: 5px !important;
+ }
+ .row .col .gg-img {
+ 	/*width: 65px;
+ 	height: 65px;*/
+ 	margin-top: 15px;
+ 	margin-left: 15px;
+ }
+ .row .col .gadgetvalue {
+ 	float: right;
+ 	margin-top: 15px;
+ 	margin-right: 15px;
+ 	font-size: 35px;
+ }
+ .row .col .gadgetname {
+ 	position: relative;
+ 	font-size: 25px;
+ 	bottom: 25px;
+ }
+ .text-in-cover-table
+ {
+ 	margin-left: 20px;
+ 	margin-top: 10px;
+ }
+  .row #AreaID {
+  	background-color: #337AB7;
+  }
+  .row #Temp {
+  	background-color: #5CB85C;
+  }
+  .row #Humid {
+  	background-color: #5CB85C;
+  }
+  .row #Light {
+  	background-color: #5CB85C;
+  }
+  .row .col p#Areaname {
+ 	right: -115px;
+ }
+  .row .col p#Tempname {
+ 	right: -135px;
+
+ }
+  .row .col p#Humidname {
+ 	right: -165px;
+
+ }
+  .row .col p#Lightname {
+ 	right: -135px;
+ }
+ /*============CSS cho select box============*/
+.my-select {
+	border: 2px solid #66FF00;
+	border-radius: 2px;
+}
+/*============Footer============*/
+#footer {
+	font-size: 85%;
+	border-top: 1px solid #e6e6e6;
+	color: #838383;
+	padding: 1em 3em;
+}
+/*============nút thêm khu vực============*/
+.button-add {
+	margin-left: 10px;
+	color: white;
+	background-color: #37ce85;
+	border: 2px solid #37ce85;
+	border-radius: 3px;
+	margin-bottom: 3px;
+	padding: 5px;
+}
+/*hiệu ứng khi đưa chuột qua*/
+.button-add:hover {
+	background-color: #66FFCC !important;
+	border: 2px solid #66FFCC;
+}
+/*============thẻ div select của ssinfo============*/
+#divselect {
+	padding: 3px;
+	text-align: left;
+	background-color: #e8e8e8;
+	width: 100%;
+	border: 1px solid #DDDDDD;
+	border-radius: 1px;
+}
+
+/*============CSS cho các bảng============*/
+/*Bao ngoài của bảng*/
+.table-cover {
+	margin-top: 15px;
+	border: 2px solid #DDDDDD;
+	border-radius: 2px;
+	width: 103%;
+	height: auto;
+}
+/*Bảng bên trong bao*/
+.build-in-table {
+	position: relative;
+	width: 99%;
+	margin: 5px;
+	margin-top: 0px !important;
+}
+.build-in-table th, td {
+	padding-top: 10px;
+	padding-right: 7px;
+	padding-left: 7px;
+	padding-bottom: 10px;
+	text-align: left;
+}
+.build-in-table th {
+	font-weight: bold;
+	border: 1.8px solid #DDDDDD !important;
+	border-radius: 2px;
+}
+.build-in-table td {
+	font-weight: normal;
+	border: 1px solid #DDDDDD !important;
+	border-radius: 1px;
+}
+/*Tiêu đề của bảng*/
+#table-title {
+	margin-top: 0px;
+	background-color: #e8e8e8;
+	padding: 5px 15px;
+	border: 1px solid #DDDDDD;
+}
+/*============Popup container============*/
+.popup {
+    position: relative;
+    /*display: inline-block;*/
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The nội dung popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 18;
+    top: 35px;
+    left: 310px;
+    margin-left: -80px;
+}
+
+/* mũi tên của popup */
+.popup .popuptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 30%;
+    margin-left: -50px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+/* ẩn và hiện popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+/*============CSS cho modal============*/
+/*Khai báo modal*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 21; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation-name: t2b;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;
+}
+/*Khai báo 1 modal nhỏ bằng 1/2 thông thường*/
+.modal .small-modal {
+	width: 50%;
+	margin: auto;
+}
+/* Modal header */
+.modal-header {
+	color: white;
+    background-color: #37ce85;
+    margin: auto;
+    padding: 5px 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-size: 25px;
+/* Modal Content */
+}.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+/* Modal footer */
+.modal-footer {
+	color: white;
+    background-color: #37ce85;
+    margin: auto;
+    padding: 5px 20px ;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Nút Close của modal */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+/*Hiệu ứng*/
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*CSS cho khu vực input*/
+.input_area {
+	margin-top: 8px;
+	padding: 3px 10px;
+	display: block;
+	width: 40%;
+}
+/*============CSS cho chữ màu vàng đặc biệt============*/
+.ospec {
+	color: #FF6600 !important;
+}
+/*============Animation set============*/
+/* Thêm animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+@keyframes l2r {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes r2l {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes t2b {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes t2bspec {
+  0% {
+    transform: translateY(-100%);
+  }
+  65% {
+    transform: translateY(0);
+  }
+  85% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes b2t {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+}
+@keyframes s2b {
+  0% {
+    width: 0%;
+    height:0%;
+  }
+  100% {
+    width: 100%;
+    height:100%;
+  }
+}
+@keyframes t2bhalf {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes vibrate {
+0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}

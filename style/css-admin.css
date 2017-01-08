@@ -1,0 +1,118 @@
+/*============Chia cot website============*/
+html {
+	font-family: Helvetica, Arial;
+}
+#head {
+	position: fixed;
+	top: 0;
+	left: 0px;
+	width: 100%;
+	height: 50px;
+	z-index: 5;
+	display: inline;
+	background-color: #191818;
+	animation-name: t2b;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;
+}
+#head .name a{
+	margin-left: 0.7em;
+	color: #66CCFF;
+	text-decoration: none;
+}
+#user-button {
+	background-image: url(../img/user.jpg);
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	top: 10px;
+	right: 100px;
+}
+#container {
+	margin-top: 50px;
+}
+/*CSS for user popup*/
+#popup-user {
+	display: none;
+	position: fixed;
+	top: 55px;
+	right: 100px;
+	border-radius: 6px;
+    /*padding: 8px;*/
+    background: #88b7d5;
+	border: 1px solid #c2e1f5;
+	width: 150px;
+	height: auto;
+	animation-name: t2bhalf;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;
+	z-index: 20;
+}
+
+#popup-user:after, #popup-user:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+#popup-user:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #88b7d5;
+	border-width: 5px;
+	margin-left: 55px;
+}
+#popup-user:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #c2e1f5;
+	border-width: 6px;
+	margin-left: 54px;
+}
+/*popup element*/
+#popup-user ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+#popup-user ul li{
+	line-height: 2em;
+	height: 2em;
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	position: relative;
+}
+#popup-user ul li a{
+	display: block;
+	color:#fff;
+	padding: 0 1em;
+	border-bottom: 1px solid #E4F0F9;
+	text-decoration: none;
+}
+#popup-user ul li:hover {
+	background-color: #33CCFF;
+}
+/*CSS for transition*/
+@keyframes t2b {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes t2bhalf {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
